@@ -197,11 +197,25 @@ local snippets = {
     ----------------------------------------------------------------------
     -- Logic function
     ----------------------------------------------------------------------
-    s({trig = "A(.)(.)", regTrig = true, condition = in_mathzone},{
+    s({trig = "All(.)(.)", regTrig = true, condition = in_mathzone},{
     f(function(_, snip)
       local first_char = snip.captures[1]
       local second_char = snip.captures[2]
       return "\\text{All } " .. first_char .. " \\text{ are } " .. second_char
+    end),
+  }),
+      s({trig = "Some(.)(.)", regTrig = true, condition = in_mathzone},{
+    f(function(_, snip)
+      local first_char = snip.captures[1]
+      local second_char = snip.captures[2]
+      return "\\text{Some } " .. first_char .. " \\text{ are } " .. second_char
+    end),
+  }),
+      s({trig = "No(.)(.)", regTrig = true, condition = in_mathzone},{
+    f(function(_, snip)
+      local first_char = snip.captures[1]
+      local second_char = snip.captures[2]
+      return "\\text{No } " .. first_char .. " \\text{ are } " .. second_char
     end),
   }),
     ----------------------------------------------------------------------
