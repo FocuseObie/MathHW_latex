@@ -154,7 +154,7 @@ local snippets = {
     s({trig="ord", snippetType="snippet", condition = in_mathzone}, { t"\\text{ord}(", i(1), t")" }),
     s({trig="im", snippetType="snippet", condition = in_mathzone}, { t"\\text{im}(", i(1), t")" }),
     s({trig="iff", snippetType="snippet", condition = in_mathzone}, t"\\iff "),
-    s({trig="setm", snippetType="snippet", condition = in_mathzone}, t"\\setminus "), 
+    s({trig="smin", snippetType="snippet", condition = in_mathzone}, t"\\setminus "), 
     ----------------------------------------------------------------------
     -- Derivatives and Integrals
     ----------------------------------------------------------------------
