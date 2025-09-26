@@ -28,9 +28,9 @@ local snippets = {
     s({trig="@E", snippetType="snippet", condition = in_mathzone}, t"\\Epsilon"),
     s({trig="@z", snippetType="snippet", condition = in_mathzone}, t"\\zeta"),
     s({trig="@Z", snippetType="snippet", condition = in_mathzone}, t"\\Zeta"),
-    s({trig="@h", snippetType="snippet", condition = in_mathzone}, t"\\eta"), 
+    s({trig="@h", snippetType="snippet", condition = in_mathzone}, t"\\eta"),
     s({trig="@H", snippetType="snippet", condition = in_mathzone}, t"\\Eta"),
-    s({trig="@t", snippetType="snippet", condition = in_mathzone}, t"\\theta"), 
+    s({trig="@t", snippetType="snippet", condition = in_mathzone}, t"\\theta"),
     s({trig="@T", snippetType="snippet", condition = in_mathzone}, t"\\Theta"),
     s({trig="@i", snippetType="snippet", condition = in_mathzone}, t"\\iota"),
     s({trig="@I", snippetType="snippet", condition = in_mathzone}, t"\\Iota"),
@@ -44,7 +44,7 @@ local snippets = {
     s({trig="@N", snippetType="snippet", condition = in_mathzone}, t"\\Nu"),
     s({trig="@x", snippetType="snippet", condition = in_mathzone}, t"\\xi"),
     s({trig="@X", snippetType="snippet", condition = in_mathzone}, t"\\Xi"),
-    s({trig="@oo", snippetType="snippet", condition = in_mathzone}, t"\\omicron"), 
+    s({trig="@oo", snippetType="snippet", condition = in_mathzone}, t"\\omicron"),
     s({trig="@OO", snippetType="snippet", condition = in_mathzone}, t"\\Omicron"),
     s({trig="@p", snippetType="snippet", condition = in_mathzone}, t"\\pi"),
     s({trig="@P", snippetType="snippet", condition = in_mathzone}, t"\\Pi"),
@@ -52,21 +52,21 @@ local snippets = {
     s({trig="@R", snippetType="snippet", condition = in_mathzone}, t"\\Rho"),
     s({trig="@s", snippetType="snippet", condition = in_mathzone}, t"\\sigma"),
     s({trig="@S", snippetType="snippet", condition = in_mathzone}, t"\\Sigma"),
-    s({trig="@ta", snippetType="snippet", condition = in_mathzone}, t"\\tau"), 
+    s({trig="@ta", snippetType="snippet", condition = in_mathzone}, t"\\tau"),
     s({trig="@Ta", snippetType="snippet", condition = in_mathzone}, t"\\Tau"),
     s({trig="@u", snippetType="snippet", condition = in_mathzone}, t"\\upsilon"),
     s({trig="@U", snippetType="snippet", condition = in_mathzone}, t"\\Upsilon"),
-    s({trig="@f", snippetType="snippet", condition = in_mathzone}, t"\\phi"), 
+    s({trig="@f", snippetType="snippet", condition = in_mathzone}, t"\\phi"),
     s({trig="@F", snippetType="snippet", condition = in_mathzone}, t"\\Phi"),
     s({trig="@c", snippetType="snippet", condition = in_mathzone}, t"\\chi"),
     s({trig="@C", snippetType="snippet", condition = in_mathzone}, t"\\Chi"),
     s({trig="@y", snippetType="snippet", condition = in_mathzone}, t"\\psi"),
     s({trig="@Y", snippetType="snippet", condition = in_mathzone}, t"\\Psi"),
-    s({trig="@o", snippetType="snippet", condition = in_mathzone}, t"\\omega"), 
+    s({trig="@o", snippetType="snippet", condition = in_mathzone}, t"\\omega"),
     s({trig="@O", snippetType="snippet", condition = in_mathzone}, t"\\Omega"),
     s({trig="@ve", snippetType="snippet", condition = in_mathzone}, t"\\varepsilon"),
     s({trig="@vk", snippetType="snippet", condition = in_mathzone}, t"\\varkappa"),
-    s({trig="@vp", snippetType="snippet", condition = in_mathzone}, t"\\varphi"), 
+    s({trig="@vp", snippetType="snippet", condition = in_mathzone}, t"\\varphi"),
     s({trig="@vpi", snippetType="snippet", condition = in_mathzone}, t"\\varpi"),
     s({trig="@vr", snippetType="snippet", condition = in_mathzone}, t"\\varrho"),
     s({trig="@vs", snippetType="snippet", condition = in_mathzone}, t"\\varsigma"),
@@ -87,6 +87,7 @@ local snippets = {
     s({trig="Im", snippetType="snippet", condition = in_mathzone}, t"\\mathrm{Im}"),
     s({trig="bf", snippetType="snippet", condition = in_mathzone}, { t"\\mathbf{", i(1), t"}" }),
     s({trig="rm", snippetType="snippet", condition = in_mathzone}, { t"\\mathrm{", i(1), t"}" }),
+    s({trig="scr", snippetType="snippet", condition = in_mathzone}, { t"\\mathscr{", i(1), t"}" }),
     ----------------------------------------------------------------------
     -- Accents
     ----------------------------------------------------------------------
@@ -149,6 +150,11 @@ local snippets = {
     s({trig="sus", snippetType="snippet", condition = in_mathzone}, t"\\supset"),
     s({trig="sus", snippetType="snippet", condition = in_mathzone}, t"\\supseteq"),
     s({trig="no", snippetType="snippet", condition = in_mathzone}, t"\\not"),
+    s({trig="kern", snippetType="snippet", condition = in_mathzone}, { t"\\text{kern}(", i(1), t")" }),
+    s({trig="ord", snippetType="snippet", condition = in_mathzone}, { t"\\text{ord}(", i(1), t")" }),
+    s({trig="im", snippetType="snippet", condition = in_mathzone}, { t"\\text{im}(", i(1), t")" }),
+    s({trig="iff", snippetType="snippet", condition = in_mathzone}, t"\\iff "),
+    s({trig="setm", snippetType="snippet", condition = in_mathzone}, t"\\setminus "), 
     ----------------------------------------------------------------------
     -- Derivatives and Integrals
     ----------------------------------------------------------------------
@@ -195,7 +201,7 @@ local snippets = {
     s({trig="ket", snippetType="snippet", condition = in_mathzone}, { t"\\ket{", i(1), t"}" }),
     s({trig="brk", snippetType="snippet", condition = in_mathzone}, { t"\\braket{", i(1), t"|", i(2), t"}" }),
     ----------------------------------------------------------------------
-    -- Logic function
+    -- Logic functions
     ----------------------------------------------------------------------
     s({trig = "All(.)(.)", regTrig = true, condition = in_mathzone},{
     f(function(_, snip)
@@ -217,6 +223,15 @@ local snippets = {
       local second_char = snip.captures[2]
       return "\\text{No } " .. first_char .. " \\text{ are } " .. second_char
     end),
+  }),
+    ----------------------------------------------------------------------
+    -- Topology functions
+    ----------------------------------------------------------------------
+            s({trig = "(.)opn", regTrig = true, condition = in_mathzone},{
+    f(function(_, snip)
+      local first_char = snip.captures[1]
+      return "" .. first_char .. "^{\\circ}"
+      end),
   }),
     ----------------------------------------------------------------------
     -- Text Mode Snippets
