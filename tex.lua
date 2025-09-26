@@ -105,7 +105,7 @@ local snippets = {
     s({trig="prod", snippetType="snippet", condition = in_mathzone}, { t"\\prod_{", i(1,"i=1"), t"}^{", i(2,"n"), t"} ", i(3) }),
     s({trig="sum", snippetType="snippet", condition = in_mathzone}, { t"\\sum_{ ", i(1,"i=1"), t"}^{", i(2,"n"), t"} ", i(3) }),
     s({trig="lim", snippetType="snippet", condition = in_mathzone}, { t"\\lim_{", i(1,"n \\to \\infty"), t"} ", i(2) }),
-    s({trig="ex", snippetType="snippet", condition = in_mathzone}, t"\\exists"),
+    s({trig="Ex", snippetType="snippet", condition = in_mathzone}, t"\\exists"),
     s({trig="del", snippetType="snippet", condition = in_mathzone}, t"\\nabla"),
     s({trig="xx", snippetType="snippet", condition = in_mathzone}, t"\\times "),
     s({trig="**", snippetType="snippet", condition = in_mathzone}, t"\\cdot "),
