@@ -1,0 +1,34 @@
+
+Let $\Gamma $ be any set of sentences in $\mathscr{S}$. Following the steps below, show that there is a
+model M with the following properties:
+\begin{enumerate}[(a)]
+\item
+	$\mathcal{M} \vDash  \Gamma_{all,no}$
+
+		Take $\mathcal{M} = \left(  M, \left\llbracket  \  \right\rrbracket  \right) \text{ s.t }$ 		$$M= \left\{  A \subseteq P: (\forall v,w \in  P, (v \in  A) \land (\Gamma \vdash  \text{All } v \text{ are } w ) \implies  w \in  A)\land(\forall v,w \in  A \implies  \Gamma \nvdash  \text{No } v \text{ are } w ) \right\}$$
+		 $$\left\llbracket  u  \right\rrbracket =\left\{  A \in  M:\  u \in  A \right\}$$
+		 (first condition of $A$ is that it is logically closed, like the State definition kind of).
+\begin{enumerate}[1.]
+	\item
+Take $\Psi \in  \Gamma_{all,no} \text{ s.t }  \Psi = \text{All } x \text{ are } y.$ W.t.s. $\mathcal{M} \vDash  \Psi$.
+
+ $\forall V \in  \left\llbracket  x  \right\rrbracket$, by def. $x \in  V$ and $\Gamma \vdash  \text{All } x \text{ are } y$ is given by $\Psi \in  \Gamma $, thus $y \in V $ by condition 1. Thus by def. since $\forall V \in  \left\llbracket  x  \right\rrbracket,\ y \in  V$ we have $V \in  \left\llbracket  y  \right\rrbracket,\ \therefore  \left\llbracket  x  \right\rrbracket \subseteq \left\llbracket  y  \right\rrbracket $, so $\mathcal{M} \vDash  \Psi$.
+ \item
+Take $\Omega \in  \Gamma_{all,no} \text{ s.t }  \Omega = \text{No } x \text{ are } y$. W.t.s. $\mathcal{M} \vDash  \Omega $.
+
+By def. $\forall A \in  M,\ x \in  A \implies  y \not\in  A,\ y \in  A \implies  x \not\in  A$, else condition 2 will be violated. From this, $\forall G \in  \left\llbracket  x  \right\rrbracket,\ y \not\in  G$ which is enough to show $\left\llbracket  x  \right\rrbracket \cap \left\llbracket  y  \right\rrbracket = \varnothing $, so $\mathcal{M} \vDash  \Omega $.
+\end{enumerate}
+\item
+	If $\varphi $ is any sentence in $\mathscr{S}\text{(all,no)}$, and $\mathcal{M} \vDash  \varphi,\text{ then }\Gamma \vdash  \varphi $.
+\begin{enumerate}[1.]
+	\item
+		Take $\varphi_1 = \text{All } x \text{ are } y$. Assume $  \mathcal{M} \vDash  \varphi_1  $. W.t.s $\Gamma \vdash  \varphi_1 $.
+
+		Assume $\Gamma  \nvdash  \varphi_1$. Take $A=\left\{  z: \Gamma \vdash  \text{All } x \text{ are } z  \right\}$, this set axiomatically contains $x$, and under our assumption $y \not\in  A$. To show $A \in  M$, looking at the first condition: for $v \in  A$ we have $\Gamma \vdash  \text{All } x \text{ are } v $. If $\exists w \in  P \text{ s.t }  \Gamma \vdash  \text{All } v \text{ are } w $ then we can apply BARBARA to get $\Gamma \vdash  \text{All } x \text{ are } w $ and thus $w \in  A$, satisfying condition 1. For condition 2: take $v,w \in  A$, assume for contradiction that $\Gamma \vdash  \text{No } v \text{ are } w $. Then applying CAMESTRES to this and $\Gamma \vdash  \text{All } x \text{ are } w $, we get $\Gamma \vdash  \text{No } w \text{ are } x $, but by def. of $w \in  A$ we also have $\Gamma \vdash  \text{All } x \text{ are } w $, an inconsistency thus $\Gamma \nvdash  \text{No } v \text{ are } w $ for $v,w \in  A$, satisfying condition 2. Therefore, if $\Gamma \nvdash  \varphi_1$ there is some $A \in  M \text{ s.t }  x \in  A,\ y \not\in  A$ which implies $\mathcal{M} \nvDash  \varphi_1$, a contradiction, thus $\forall x,y \in  P,\  \mathcal{M} \vDash  \text{All } x \text{ are } y \implies  \Gamma \vdash  \text{All } x \text{ are } y $
+	\item
+		Take $\varphi_2 = \text{No } x \text{ are } y.$ Assume $\mathcal{M} \vDash  \varphi_2 .$ W.t.s. $\Gamma \vdash  \varphi_2 $.
+
+		Assume $\Gamma \nvdash  \varphi_2$. Take $A = \left\{  z: \Gamma \vdash  \text{All } x \text{ are } z \lor \Gamma \vdash  \text{All } y \text{ are } z  \right\} $, first this set axiomatically contains both $x$ and $y$. Looking at condition 1: take $v \in  A$, giving $\Gamma \vdash  \text{All } x \text{ are } v \text{ or } \Gamma \vdash  \text{All } y \text{ are } v $. If $\exists w \in  A \text{ s.t }  \Gamma \vdash  \text{All } v \text{ are } w $ then by BARBARA we achieve $\Gamma \vdash  \text{All } x \text{ are } w \text{ or } \Gamma \vdash  \text{All } y \text{ are } w $ depending on which ever $v$ satisfies by being in $A$, thus condition 1 holds. For condition 2, take $v,w \in  A$ and assume for contradiction $\Gamma \vdash  \text{No } v \text{ are } w $. We can look at 2 cases w.l.o.g.: $\n \Gamma \vdash  \text{All } x \text{ are } v ,\ \Gamma \vdash  \text{All } x \text{ are } w $, or $\Gamma \vdash  \text{All } x \text{ are } v ,\ \Gamma \vdash  \text{All } y \text{ are } v $. For case 1 we achieve inconsistency with CAMESTRES getting $\Gamma \vdash  \text{No } v \text{ are } x $ which with $\Gamma \vdash  \text{All } x \text{ are } v $ is an inconsistency. Case 2 using CAMESTRES and NO/ZERO gets $\Gamma \vdash  \text{No } v \text{ are } y $ and $\Gamma \vdash  \text{No } w \text{ are } x $. However, applying NO/ZERO and CAMESTRES with these new No statements on our case 2 assumptions gets $\Gamma \vdash  \text{No } x \text{ are } y $ and $\Gamma \vdash  \text{No } y \text{ are } x $, which is an inconsistency with our assumption that $\Gamma \nvdash  \varphi_2$, thus we must have $\forall v,w \in  A,\  \Gamma \nvdash  \text{No } v \text{ are } w $, and so condition 2 holds and $A \in  M$. Therefore if $\Gamma \nvdash  \varphi_2$ there is some $A \in  M \text{ s.t }  x,y \in  A$ which implies $\mathcal{M} \nvDash  \varphi_2$, which is a contradiction so we must have $\Gamma \vdash  \varphi_2$. And from these cases of $\varphi $ we see that $\forall \varphi \in  \mathscr{S}(\text{all,no}),\ \mathcal{M} \vDash  \varphi \implies  \Gamma \vdash  \varphi$. 
+\end{enumerate}
+\end{enumerate}
+

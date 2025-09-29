@@ -1,0 +1,23 @@
+\newpage
+Finish the completeness proof of the logic for $\mathscr{S}$ given in the lecture (see Sep 9
+notes). Here is an outline.
+
+\begin{enumerate}[(a)]
+	\item
+
+Suppose that $\Gamma \vDash  \varphi $, with $\varphi $ of the form Some $p$ are $q$. In this case, we use
+partial completeness result we did in the lecture (see Sep 11 notes).
+
+From lecture: taking $\mathcal{M}_s = (\Gamma_{all,some} , \left\llbracket  \ \right\rrbracket ),\ \left\llbracket  u  \right\rrbracket = \left\{  \varphi \in   \Gamma_{all,some} :  \Gamma_{all,some} \vdash  \text{All } v \text{ are } u \implies  v \in  \varphi  \right\} $, our Lemma 1 showed $\mathcal{M}_s \vDash  \Gamma_{all,some} $, our second lemma showed $\mathcal{M}_s \vDash  \text{Some } p \text{ are } q \implies  \Gamma_{all,some} \vdash  \text{Some }$. Our theorem showed for $\Gamma  \subset \mathscr{S},\ \Gamma \vDash  \text{Some } p \text{ are } q \implies  \Gamma \vdash  \text{Some } p \text{ are } q $ via two cases:\\
+1. $\mathcal{M}_s \vDash  \Gamma_{no}$. By lemma 2 and our assumption we have $\Gamma \vdash  \text{Some } p \text{ are } q $.\\
+2. $\mathcal{M}_s \nvDash  \Gamma_{no}$. Then $\mathcal{M}_s \vDash  \text{Some } m \text{ are } n$ which by lemma 2 gives $\Gamma \vdash  \text{Some } m \text{ are } n$. Thus by applying X rule we have $\Gamma \vdash  \text{No } n \text{ are } n $ thus $\Gamma \vdash  \text{Some } p \text{ are } q $.
+\item
+	Suppose that $\Gamma  \vDash \varphi $, with $\varphi $ of the form All $p$ are $q$ or No $p$ are $q$. Let $\mathcal{M} $ be
+the model from previous exercise. We have two cases, depending on whether
+$M \vDash   \Gamma_{some}$ or not. Argue that either way, $\Gamma \vdash  \varphi $.
+
+Case 1: $\mathcal{M} \vDash  \Gamma_{some}$. This with $\mathcal{M} \vDash  \Gamma_{all,no}$ from Problem 1 provides $\mathcal{M} \vDash  \Gamma $. Since $\mathcal{M} \vDash  \Gamma $ and $\Gamma \vDash  \varphi $ by assumption, we know $\forall \psi \in  \Gamma ,\ \mathcal{M} \vDash  \psi $, and from Problem 1 (b) we know $\mathcal{M} \vDash  \varphi \implies  \Gamma \vdash  \varphi $ in this case.
+
+Case 2: $\mathcal{M} \nvDash  \Gamma_{some}.$ Like lemma 2, this case implies there is some $x,y \in  P \text{ s.t }  \Gamma \vdash  \text{Some } x \text{ are } \n y $ and $ \mathcal{M} \nvDash  \text{Some } x \text{ are } y $. The later means $\left\llbracket  x  \right\rrbracket \cap \left\llbracket  y  \right\rrbracket =\varnothing $, but then $\mathcal{M} \vDash  \text{No } x \text{ are } y $ and again by 1 (b) this implies $\Gamma \vdash  \text{No } x \text{ are } y $. Thus with both $\Gamma \vdash  \text{Some } x \text{ are } y $ and $\Gamma \vdash  \text{No } x \text{ are } y $ we use X rule to achieve $\Gamma \vdash  \varphi $.
+
+\end{enumerate}
