@@ -1,0 +1,17 @@
+\newpage
+Solve the diffusion equation $u_t = ku_{xx}$ with the initial condition
+$u(x, 0) = x^2$ by the following special method. First show that $u_{xxx}$
+satisﬁes the diffusion equation with zero initial condition. Therefore, by uniqueness, $u_{xxx} \equiv 0$. Integrating this result thrice, obtain
+$u(x, t) = A(t)x^2 + B(t)x + C(t)$. Finally, it’s easy to solve for $A, B,$
+and $C$ by plugging into the original problem.
+
+Differentiating the diffusion equation: $(u_t)_{xxx}=k(u_{xx})_{xxx}$, under our assumptions we can change the orders: $(u_{xxx})_t=k(u_{xxx})_{xx}$, showing $u_{xxx}$ to satisfy diffusion eq. Plugging in after integrating thrice with respect to $t$:
+\begin{gather*}
+	A'(t)x^2+B'(t)x+C'(t)=2kA(t) \stackrel{ }{\longrightarrow} 	A'(t)x^2+B'(t)x+C'(t)-2kA(t)=0 
+\end{gather*}
+For this to always hold we take $A'(t),B'(t)=0$, meaning $A(t),B(t)$ are just constants (say $A,B$) giving:
+\begin{gather*}
+	C'(t)-2kA=0 \stackrel{ \int }{\longrightarrow} C(t)-2kAt=c_1 \stackrel{ }{\longrightarrow} C(t)=2kAt+c_1\\
+	Ax^2+Bx+(2kA\cdot 0+c_1)=x^2 \stackrel{ }{\longrightarrow} A=1,\ B=0,\ c_1=0\\
+	u(x,t)=x^2+2kt
+\end{gather*}

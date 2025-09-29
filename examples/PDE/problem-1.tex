@@ -1,0 +1,24 @@
+\newpage
+Consider the diffusion equation $u_t = u_{xx}$ in the interval $(0, 1)$ with $u(0, t) =
+u(1, t) = 0$ and $u(x, 0) = 1 - x^2$. Note that this initial function does not
+satisfy the boundary condition at the left end, but that the solution will
+satisfy it for all $t > 0$.
+\begin{enumerate}[(a )]
+	\item
+Show that $u(x, t) > 0$ at all interior points $0 < x < 1, 0 < t < \infty.$\\
+
+We see that the max value is taken at $u(0,0)=1$, and further, the minimum value can be verified to be $0$ on the boundary, thus by the max-min principle we know $u(x,t) \in  (0,1)$ for all interior points. 
+\item 
+For each $t > 0$, let $\mu(t)$ = the maximum of $u(x, t)$ over $0 \leq   x \leq  1$.
+      Show that $\mu (t)$ is a decreasing (i.e., nonincreasing) function of t.
+      (Hint: Let the maximum occur at the point $X(t)$, so that $\mu (t) =
+      u(X(t), t)$. Differentiate $\mu (t)$, assuming that $X(t)$ is differentiable.)\\
+
+      Taking $u (X(t),t)=\mu(t)$, w.t.s $0>\ \frac{\partial \mu }{\partial t }=X'(t)u_x(X(t),t)+u_t(X(t),t)=X'(t)u_x+u_xx$. Since $\mu $ is always a max of $u$, by the second derivative test we will have $u_x=0, u_{xx}<0$ thus the inequalities hold and $\frac{ d \mu  }{dt}<0$ so $\mu$ is a decreasing function.
+\item
+	Draw a rough sketch of what you think the solution looks like ($u$
+      versus $x$) at a few times. (If you have appropriate software available,
+compute it.)
+
+\href{https://www.desmos.com/3d/kamla7y3ot}{https://www.desmos.com/3d/kamla7y3ot} give it a few seconds to graph.
+\end{enumerate}

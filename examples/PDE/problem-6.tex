@@ -1,0 +1,30 @@
+\newpage
+\begin{enumerate}[(a)]
+\item
+	Solve Exercise 9 using the general formula discussed in the
+      text. This expresses $u(x, t)$ as a certain integral. Substitute $p =
+      (x - y)/ \sqrt{ 4kt}$ in this integral.\\
+
+      First notice that the change of variables reverses the domain: $y \in  [a,b] \implies  p \in  [a,b]$, then using (8):
+\begin{gather*}
+	\frac{ 1 }{\sqrt{ 4\pi kt }}\int_{-\infty }^{\infty } y^2e^{-(x-y)^2/4kt}dy \stackrel{ }{\longrightarrow} \frac{ 1 }{\sqrt{ 4\pi kt }}\int_{\infty }^{-\infty } (x-p \sqrt{ 4kt })^2e^{-p^2}(-\sqrt{ 4kt})dp\\ \text{Flip bounds switch signs and expand:}
+	\frac{  1 }{ \sqrt{ \pi }}\left[  x^2 \int_{-\infty }^{\infty } e^{-p^2}dp-2x \sqrt{ 4kt}\int_{-\infty }^{\infty } pe^{-p^2}dp+4kt\int_{-\infty }^{\infty } p^2e^{-p^2}dp \right]\\
+	\text{From prev. results and integration by parts:}\frac{ 1 }{\sqrt{ \pi }}\left[  x^2 \sqrt{ \pi } +0+ 4kt\left(   \frac{ -1 }{2 }e^{-p^2}  --\frac{ 1 }{2}\left( \sqrt{ \pi } \right)  \right|_{-\infty }^{\infty } \right] \\
+		\frac{ 1 }{\sqrt{ \pi }}\left(  x^2 \sqrt{ \pi }+4kt \frac{ 1 }{2}\sqrt{ \pi } \right) =x^2+2kt
+\end{gather*}
+\item 
+	Since the solution is unique, the resulting formula must agree with
+the answer to Exercise 9. Deduce the value of
+$$\int_{-\infty }^{\infty }p^2e^{-p^2}dp$$
+
+
+$$
+\text{By parts from (a): }
+\begin{matrix}
+	pe^{-p^2}& \frac{ -1 }{2 }e^{-p^2}\\
+	p&1
+\end{matrix} \stackrel{ }{\longrightarrow} \left[  \frac{ -pe^{-p^2}}{2 }-\left(  \frac{ -1 }{2 }\int_{-\infty }^{\infty } e^{-p^2}dp \right) \right|_{-\infty }^{\infty }=0+\frac{ 1 }{2 }\sqrt{ \pi}  
+$$
+\end{enumerate}
+
+

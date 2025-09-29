@@ -1,0 +1,22 @@
+\newpage
+Consider the diffusion equation on $(0, l)$ with the Robin boundary conditions $u_x (0, t)- a_0u(0, t) = 0$ and $u_x (l, t) + a_lu(l, t) = 0$. If $a_0 > 0$ and
+$a_l > 0$, use the energy method to show that the endpoints contribute to
+the decrease of
+$\int_0^lu^2(x,t)\ dx.$
+(This
+is
+interpreted
+to
+mean
+that
+part
+of
+the “energy” is lost at the boundary, so we call the boundary conditions
+“radiating” or “dissipative.”)
+
+\begin{gather*}
+	u_t=ku_{xx} \stackrel{\cdot x }{\longrightarrow} uu_t=kuu_{xx}=\left(  \frac{ 1 }{2 }u^2  \right)_t=\left(  kuu_x  \right)_x-ku_x^2 \stackrel{ \int }{\longrightarrow} \frac{ 1 }{2 }\frac{ d }{dt }\int u^2dx=\left kuu_x  \right|_0^l-k\int u_x^2dx\\
+=k \left[  u(l,t)\left( -a_l u(l,t)\right)-u(0,t)\left(  a_0 u(0,t) \right)   \right] -k\int u_x^2dx=-k(a_lu(l,t)^2+a_0u(0,t)^2)-k\int u_x^2dx\\
+\frac{ d }{dt } \int u^2dx=\frac{ -k }{2 }(\text{ positive stuff })
+\end{gather*}
+Thus for positive $k$'s we have $\frac{ d }{dt }\int_0^lu^2dx \leq 0$, showing it to be a decreasing function with respect to time.
