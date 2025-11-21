@@ -104,6 +104,7 @@ local snippets = {
     s({trig="ooo", snippetType="snippet", condition = in_mathzone}, t"\\infty"),
     s({trig="prod", snippetType="snippet", condition = in_mathzone}, { t"\\prod_{", i(1,"i=1"), t"}^{", i(2,"n"), t"} ", i(3) }),
     s({trig="sum", snippetType="snippet", condition = in_mathzone}, { t"\\sum_{ ", i(1,"i=1"), t"}^{", i(2,"n"), t"} ", i(3) }),
+    s({trig="summ", snippetType="snippet", condition = in_mathzone}, t"\\sum "),
     s({trig="lim", snippetType="snippet", condition = in_mathzone}, { t"\\lim_{", i(1,"n \\to \\infty"), t"} ", i(2) }),
     s({trig="Ex", snippetType="snippet", condition = in_mathzone}, t"\\exists"),
     s({trig="del", snippetType="snippet", condition = in_mathzone}, t"\\nabla"),
@@ -143,7 +144,7 @@ local snippets = {
     s({trig="ts2", snippetType="snippet", condition = in_mathzone}, t"\\vDash "),
     s({trig="nts1", snippetType="snippet", condition = in_mathzone}, t"\\nvdash "),
     s({trig="nts2", snippetType="snippet", condition = in_mathzone}, t"\\nvDash "),
-    s({trig="st", snippetType="snippet", condition = in_mathzone}, t"\\text{ s.t } "),
+    s({trig="st", snippetType="snippet", condition = in_mathzone}, t"\\text{ s.t. } "),
     s({trig="fa", snippetType="snippet", condition = in_mathzone}, t"\\forall"),
     s({trig="ss", snippetType="snippet", condition = in_mathzone}, t"\\subset"),
     s({trig="sseq", snippetType="snippet", condition = in_mathzone}, t"\\subseteq"),
@@ -154,7 +155,13 @@ local snippets = {
     s({trig="ord", snippetType="snippet", condition = in_mathzone}, { t"\\text{ord}(", i(1), t")" }),
     s({trig="im", snippetType="snippet", condition = in_mathzone}, { t"\\text{im}(", i(1), t")" }),
     s({trig="iff", snippetType="snippet", condition = in_mathzone}, t"\\iff "),
-    s({trig="smin", snippetType="snippet", condition = in_mathzone}, t"\\setminus "), 
+    s({trig="setm", snippetType="snippet", condition = in_mathzone}, t"\\setminus "),
+    s({trig="cap", snippetType="snippet", condition = in_mathzone}, t"\\cap "), 
+    s({trig="cup", snippetType="snippet", condition = in_mathzone}, t"\\cup "),
+    s({trig="qleq", snippetType="snippet", condition = in_mathzone}, t"\\stackrel{?}{\\leq}"),
+    s({trig="qgeq", snippetType="snippet", condition = in_mathzone}, t"\\stackrel{?}{\\geq}"),
+    s({trig="tuh", snippetType="snippet", condition = in_mathzone}, t"\\to"),
+    s({trig="neg", snippetType="snippet", condition = in_mathzone}, t"\\neg"),
     ----------------------------------------------------------------------
     -- Derivatives and Integrals
     ----------------------------------------------------------------------
@@ -168,8 +175,7 @@ local snippets = {
     -- Brackets
     ----------------------------------------------------------------------
     s({trig="avg", snippetType="snippet", condition = in_mathzone}, { t"\\langle ", i(1), t" \\rangle ", i(0) }),
-    s({trig="norm", snippetType="snippet", condition = in_mathzone}, { t"\\lvert ", i(1), t" \\rvert ", i(0) }),
-    s({trig="Norm", snippetType="snippet", condition = in_mathzone}, { t"\\lVert ", i(1), t" \\rVert ", i(0) }),
+    s({trig="norm", snippetType="snippet", condition = in_mathzone}, { t"\\lVert ", i(1), t" \\rVert ", i(0) }),
     s({trig="ceil", snippetType="snippet", condition = in_mathzone}, { t"\\lceil ", i(1), t" \\rceil ", i(0) }),
     s({trig="floor", snippetType="snippet", condition = in_mathzone}, { t"\\lfloor ", i(1), t" \\rfloor ", i(0) }),
     s({trig="lr(", snippetType="snippet", condition = in_mathzone}, { t"\\left( ", i(1), t" \\right) ", i(0) }),
@@ -190,7 +196,7 @@ local snippets = {
     s({trig="align", snippetType="snippet", condition = in_mathzone}, fmt("\\begin{{align*}}\n\t{}\n\\end{{align*}}", {i(1)})),
     s({trig="sys", snippetType="snippet", condition = in_mathzone}, fmt("\\begin{{array}}\n\t{}\n\\end{{array}}", {i(1)})),
     s({trig="bgeq", snippetType="snippet", condition = in_mathzone}, fmt("\\begin{{equation}}\n\t{}\n\\end{{equation}}", {i(1)})),
-    s({trig="bgal", snippetType="snippet", condition = in_mathzone}, fmt("\\begin{{aligned}}\n\t{}\n\\end{{aligned}}", {i(1)})),
+    s({trig="bgal", snippetType="snippet", condition = in_mathzone}, fmt("\\begin{{align*}}\n\t{}\n\\end{{align*}}", {i(1)})),
     s({trig="bgg", snippetType="snippet", condition = in_mathzone}, fmt("\\begin{{gather*}}\n\t{}\n\\end{{gather*}}", {i(1)})),
     s({trig="bgen", snippetType="snippet", condition = in_mathzone}, fmt("\\begin{{enumerate}}[(\t{})]\n\n\\end{{enumerate}}", {i(1)})),
     ----------------------------------------------------------------------
